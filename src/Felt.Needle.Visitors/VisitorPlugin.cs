@@ -11,7 +11,7 @@ namespace Felt.Needle.Visitors
     /// </summary>
     public class VisitorPlugin : ICecilPlugin, IList<IMemberDefinitionVisitor>
     {
-        protected readonly System.Collections.Generic.List<IMemberDefinitionVisitor> Visitors = new();
+        protected readonly List<IMemberDefinitionVisitor> Visitors = new();
 
         public virtual void TransformModule(ModuleDefinition module) {
             foreach (IMemberDefinitionVisitor visitor in Visitors) VisitModule(module, visitor);
@@ -29,7 +29,7 @@ namespace Felt.Needle.Visitors
                 foreach (TypeDefinition nestedType in type.NestedTypes) RecurseType(nestedType, types);
             }
 
-            ICollection<TypeDefinition> types = new System.Collections.Generic.List<TypeDefinition>();
+            ICollection<TypeDefinition> types = new List<TypeDefinition>();
             foreach (TypeDefinition type in module.Types) {
                 RecurseType(type, types);
             }
