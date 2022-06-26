@@ -1,13 +1,24 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
+        <TargetFrameworks>net6.0;net5.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
         <Nullable>enable</Nullable>
+        <LangVersion>default</LangVersion>
+        <Title>FeltPowered.Felt.Needle.Visitors</Title>
+        <Authors>FeltPowered Team</Authors>
+        <Description>Visitors for Felt.needle.</Description>
+        <Copyright>FeltPowered Team 2022</Copyright>
+        <PackageProjectUrl>https://github.com/feltpowered/visitors</PackageProjectUrl>
+        <PackageLicenseExpression>GPL-2.0-only</PackageLicenseExpression>
+        <RepositoryUrl>https://github.com/feltpowered/visitors</RepositoryUrl>
+        <RepositoryType>Git</RepositoryType>
+        <AssemblyVersion>1.0.0</AssemblyVersion>
+        <FileVersion>1.0.0</FileVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Felt.Needle" Version="1.0.0" />
+        <PackageReference Include="Felt.Needle" Version="1.0.0"/>
     </ItemGroup>
 
 </Project>

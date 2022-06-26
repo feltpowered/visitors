@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using Felt.Needle.API;
 using Felt.Needle.Visitors.API;
 using Mono.Cecil;
@@ -10,7 +11,7 @@ namespace Felt.Needle.Visitors
     /// </summary>
     public class VisitorPlugin : ICecilPlugin, IList<IMemberDefinitionVisitor>
     {
-        protected readonly List<IMemberDefinitionVisitor> Visitors = new();
+        protected readonly System.Collections.Generic.List<IMemberDefinitionVisitor> Visitors = new();
 
         public virtual void TransformModule(ModuleDefinition module) {
             foreach (IMemberDefinitionVisitor visitor in Visitors) VisitModule(module, visitor);
@@ -28,7 +29,7 @@ namespace Felt.Needle.Visitors
                 foreach (TypeDefinition nestedType in type.NestedTypes) RecurseType(nestedType, types);
             }
 
-            ICollection<TypeDefinition> types = new List<TypeDefinition>();
+            ICollection<TypeDefinition> types = new System.Collections.Generic.List<TypeDefinition>();
             foreach (TypeDefinition type in module.Types) {
                 RecurseType(type, types);
             }
